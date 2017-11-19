@@ -1,0 +1,400 @@
+
+body{
+	background-color: #1DB29C;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+h1{
+	text-align: center;
+	margin: 20px 20px 0px 20px;
+}
+
+.main{
+	width: auto;
+	padding: 20px;
+	background-color: #1DB29C;
+}
+#wrap{
+	box-sizing: border-box;
+	border: 0px solid black;
+	margin: auto;
+	padding: 0px;
+	margin-bottom: 40px;
+	width: 22%;
+	max-width: 1000px;
+	position: fixed;
+	display: inline-block;
+	top: 30px;
+	right: 20px;
+}
+.widget{
+	width: 90%;
+	margin: auto;
+}
+.widget p{
+	display: inline-block;
+	line-height: 1em;
+}
+.fecha{
+	font-family: 'Oswald', sans-serif;
+	color: white;
+	text-align: center;
+	font-size: 1em;
+	margin-bottom: 0.3125em;
+	background: rgb(0,0,0);
+	opacity: 0.5;
+	width: 100%;
+	padding: 10px;
+}
+.reloj{
+	font-family: 'Oswald', sans-serif;
+	color: white;
+	text-align: center;
+	font-size: 1.1em;
+	margin-bottom: 0.3125em;
+	background: rgb(0,0,0);
+	opacity: 0.5;
+	width: 100%;
+	padding: 0px 10px;
+	position: relative;
+	vertical-align: middle;
+
+}
+.caja_segundos{
+	border: 0px solid black;
+	text-align: center;
+	display: inline-block;
+	position: relative;
+	padding: 0px;
+	vertical-align: middle;
+
+}
+.ampm{
+	margin: 0px 0px 8px 0px;
+	padding: 0px;
+}
+.segundos{
+	margin: 0px;
+	padding: 0px;
+	vertical-align: middle;
+	position: relative;
+	bottom: 10px;
+}
+
+.box_obtions{
+	position: absolute;
+	width: 150px;
+	height: 130px;
+	top: 100px;
+	left: 5%;
+	border-radius: 15px;
+	border: 3px solid black;
+	background: -webkit-linear-gradient(
+		-46deg,
+		#CCCCCC 0%,
+		#999999 20%,
+		#666666 100%);
+}
+.box_obtions #progreso{
+	position: relative;
+	top: 35%;
+	width: 5%;
+	height: 10px;
+	background-color: #990033;
+	transition-duration: .4s;
+}
+.box_obtions #obtions{
+	position: relative;
+	top: 10%;
+
+}
+.box_obtions #obtions p{
+	position: relative;
+	text-align: center;
+	font-size: 2em;
+
+}
+
+
+.botones{
+	width: 40%;
+	height: 60px;
+	margin: 50px auto 0px auto;
+	border: 0px solid black;
+	text-align: center;
+}
+.circulo_boton{
+	width: 14px;
+	height: 14px;
+	border: 3px solid black;
+	border-radius: 50%;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+.botones .boton_x, .boton_O{
+	width: 20%;
+	height: 30px;
+	vertical-align: middle;
+	display: inline-block;
+	margin-left: 20px;
+	margin-right: 20px;
+	position: relative;
+	background-color: #999999;
+	box-shadow: 0px 0px 5px black;
+	cursor: pointer;
+}
+.boton_x:hover, .boton_O:hover{
+	background-color: #C1C1C1;
+	box-shadow: 2px 2px 2px black;
+	border-bottom: 4px solid #1DB29C;
+}
+
+.botones .boton_x p{
+	text-align: left;
+	position: absolute;
+	top: -15px;
+	left: 5px;
+	font-size: 20px;
+	font-weight: bold;
+}
+.content{
+	width: 370px;
+	height: 370px;
+	margin: 50px auto;
+	background-color: #1DB29C;
+	padding: 10px 0px 0px 10px;
+	animation: .6s aparicion 1;
+}
+@-webkit-keyframes aparicion{
+	0%{
+		transform: scale(0.2);
+	}
+	100%{
+		transform: scale(1);
+	}
+}
+.content .cell{
+	display: inline-block;
+	width: 120px;
+	height: 120px;
+	border: 0px solid black;
+	margin: -3px;
+	padding: 0px;
+	position: relative;
+	cursor: pointer;
+}
+.content .cell:hover{
+	box-shadow: inset 0px 0px 6px #E3E3E3,
+				inset 0px 0px 2px #E3E3E3,
+				inset 0px 0px 15px #E3E3E3;
+}
+.content .cell img{
+	width: 90%;
+	height: 90%;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+#c00, #c01, #c10, #c11{
+	border-right: 8px solid #168B79;
+	border-bottom: 8px solid #168B79;
+}
+#c02, #c12{
+	border-bottom: 8px solid #168B79;
+}
+#c10,{
+	border-right: 8px solid #168B79;
+	border-bottom: 8px solid #168B79;
+}
+#c20, #c21{
+	border-right: 8px solid #168B79;
+}
+
+#mensaje{
+	width: 100%;
+	height: 1300px;
+	background-color: rgba(250,248,239, 0.6);
+	position: absolute;
+	top: 190px;
+	left: 0px;
+	text-align: center;
+	display: none;
+	-webkit-animation: 1s mensaje 1;
+}
+@-webkit-keyframes mensaje{
+	0%, 10%{
+		display: none;
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+.caja_black{
+	width: 70%;
+	height: 200px;
+	background-color: #333333;
+	border-radius: 20px;
+	margin: auto;
+	position: relative;
+	top: 200px;
+	text-align: center;
+	-webkit-animation: 1s caja_black 1;
+}
+@-webkit-keyframes caja_black{
+	0%, 40%{
+		display: none;
+		opacity: 0;
+		transform: scale(.4);
+	}
+	75%{
+		display: block;
+		opacity: 1;
+		transform: scale(1.1);
+	}
+	100%{
+		transform: scale(1);
+	}
+}
+.caja_black > p{
+	color: #CCCCCC;
+	font-size: 30px;
+	position: relative;
+	top: 150px;
+	line-height: 20px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.caja_circulo{
+	width: 120px;
+	height: 120px;
+	background-color: #333333;
+	position: absolute;
+	display: inline-block;
+	top: 20px;
+	left: 50%;
+	overflow: hidden;
+	display: inline-block;
+}
+.tapa1, .tapa2{
+	width: 50%;
+	height: 100%;
+	background-color: #333333;
+	position: absolute;
+	z-index: 90;
+}
+.tapa1{
+	-webkit-animation: .9s destama_uno 1;
+}
+.tapa2{
+	left: 50%;
+	-webkit-animation: .5s destapa_dos 1;
+}
+
+#circulo{
+	width: 60%;
+	height: 60%;
+	border-radius: 50% 50%;
+	border: 8px solid #CCCC33;
+	margin: auto;
+	position: absolute;
+	top: 5%;
+	left: 14%;
+	z-index: 100;
+}
+@-webkit-keyframes destapa_dos{
+	0%{
+		z-index: 110;
+	}
+	100%{
+		z-index: 110;
+		transform: translateY(100%);
+	}
+}
+@-webkit-keyframes destama_uno{
+	0%, 20%{
+		transform: translateY(0px);
+		z-index: 110;
+	}
+	100%{
+		z-index: 110;
+		transform: translateY(-100%);
+	}
+
+}
+
+.caja_equix{
+	width: 105px;
+	height: 105px;
+	margin: 0px;
+	background-color: #333333;
+	position: absolute;
+	display: inline-block;
+	top: 20px;
+	left: 35%;
+	overflow: hidden;
+}
+.tapaX2{
+	width: 100%;
+	height: 100%;
+	background-color: #333333;
+	position: absolute;
+}
+.tapaX1 > p{
+	position: absolute;
+	top: 50px;
+	z-index: 140;
+	
+}
+
+.tapaX2{
+	z-index: 90;
+	-webkit-animation: 1s destapa_x_dos 1;
+}
+
+#equix{
+	width: 90%;
+	height: 90%;
+	position: absolute;
+	top: 20px;
+}
+#equix:before{
+	content: "";
+	border: 5px solid #CCCCCC;
+	position: absolute;
+	width: 100%;
+	left: 0px;
+	right: 0px;
+	z-index: 100;
+	transform: translateY(30px)
+				rotate(45deg);
+}
+#equix:after{
+	content: "";
+	border: 5px solid #CCCCCC;
+	position: absolute;
+	width: 100%;
+	left: 0px;
+	right: 0px;
+	z-index: 100;
+	transform: translateY(30px)
+				rotate(-45deg);
+	
+}
+
+@-webkit-keyframes destapa_x_dos{
+	0%{
+		z-index: 110;
+	}
+	100%{
+		z-index: 110;
+		transform: translateY(100%);
+	}
+}
+
+
+

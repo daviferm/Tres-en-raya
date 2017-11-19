@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="enraya.css">
+	<link rel="shortcut icon" href="Circulo.png" type="image/x-icon">
+	<title>Tres en raya</title>
+</head>
+<body>
+	
+	<h1>Juega a las Tres en Raya</h1>
+	<div class="main">
+    	<div class="wrap" id="wrap">
+	    	<div class="widget">
+	    		<div class="fecha" id="fecha">
+	    			<p class="diaSemana" id="diaSemana"></p>
+	    			<p class="dia" id="dia"></p>
+	    			<p>de</p>
+	    			<p class="mes" id="mes"></p>
+	    			<p>de</p>
+	    			<p class="year" id="year"></p>
+	    		</div>
+	    		<div class="reloj" id="reloj">
+	    			<p class="horas" id="horas"></p>
+	    			<p>:</p>
+	    			<p class="minutos" id="minutos"></p>
+	    			<p>:</p>
+	    			<div class="caja_segundos">
+	    				<p class="ampm" id="ampm">AM</p><br>
+	    				<p class="segundos" id="segundos"></p>
+	    			</div>
+	    		</div>
+	    	</div>
+    	</div>
+    	<div class="box_obtions">
+    		<div id="progreso"></div>
+    		<div id="obtions"><p>Obciones: <span id="number_obt">9</span></p></div>
+    	</div>
+		<div class="botones">
+			<div id="botonX" class="boton_x" onclick="">
+				<p id="equex">X</p>
+			</div>
+			<div id="botonO" class="boton_O" onclick="">
+				<div id="boton_circulo" class="circulo_boton"></div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="cell" id="c00" onclick="CheckCell(0, 0)">
+			</div>
+			<div class="cell" id="c01" onclick="CheckCell(0, 1)">
+			</div>
+			<div class="cell" id="c02" onclick="CheckCell(0, 2)">
+			</div>
+			<div class="cell" id="c10" onclick="CheckCell(1, 0)">
+			</div>
+			<div class="cell" id="c11" onclick="CheckCell(1, 1)">
+			</div>
+			<div class="cell" id="c12" onclick="CheckCell(1, 2)">
+			</div>
+			<div class="cell" id="c20" onclick="CheckCell(2, 0)">
+			</div>
+			<div class="cell" id="c21" onclick="CheckCell(2, 1)">
+			</div>
+			<div class="cell" id="c22" onclick="CheckCell(2, 2)">
+			</div>
+		</div>
+	
+		<div id="mensaje">
+			<div class="caja_black">
+				<div id="caja_circulo" class="caja_circulo">
+					<div class="tapa1"></div>
+					<div class="tapa2"></div>
+					<div id="circulo"></div>
+				</div>
+				<div id="caja_equix" class="caja_equix">
+					<div class="tapaX2"></div>
+					<div id="equix"></div>
+				</div>
+				<p id="resultado" onclick="autoplay()">Partida en tablas</p>
+			</div>
+			
+		</div>
+	</div>
+
+	<script src="js/reloj.js"></script>
+	<script src="js/board_manager.js"></script>
+	<script src="js/autoplay.js"></script>	
+</body>
+</html>
