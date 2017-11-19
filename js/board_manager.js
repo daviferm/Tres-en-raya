@@ -29,7 +29,7 @@ function CheckCell(y, x){
 			checkCell_O();
 			Chedk_obtions();
 			document.getElementById("number_obt").innerHTML = obtions;
-			width_progress();			
+			width_progress();
 			break;
 		case (1):
 			botonX.style.borderBottom = "4px solid #400000";
@@ -87,25 +87,25 @@ function CheckCell(y, x){
 function width_progress(){
 	width_scroll = ((obtions_total - obtions) * (scroll_total / 9));
 	document.getElementById("progreso").style.width = width_scroll + "px";
-	console.log(width_scroll); 
+	console.log(width_scroll);
 }
 
 function Chedk_obtions(){
 	obtions = 0;
-	if(board[0][0] == 0)obtions++;  
-	if(board[0][1] == 0)obtions++; 
-	if(board[0][2] == 0)obtions++; 
-	if(board[1][0] == 0)obtions++; 
-	if(board[1][1] == 0)obtions++; 
-	if(board[1][2] == 0)obtions++; 
-	if(board[2][0] == 0)obtions++; 
-	if(board[2][1] == 0)obtions++; 
-	if(board[2][2] == 0)obtions++; 
+	if(board[0][0] == 0)obtions++;
+	if(board[0][1] == 0)obtions++;
+	if(board[0][2] == 0)obtions++;
+	if(board[1][0] == 0)obtions++;
+	if(board[1][1] == 0)obtions++;
+	if(board[1][2] == 0)obtions++;
+	if(board[2][0] == 0)obtions++;
+	if(board[2][1] == 0)obtions++;
+	if(board[2][2] == 0)obtions++;
 	console.log(obtions);
 }
 
 function Check_Game(){
-	if( board[0][0] != 0 && 
+	if( board[0][0] != 0 &&
 		board[0][1] != 0 &&
 		board[0][2] != 0 &&
 		board[1][0] != 0 &&
@@ -126,14 +126,14 @@ function Check_Game(){
 }
 
 function checkCell_O_end(){
-	if(board[0][0] == 0)PaintCircleCell(0, 0);  
-	if(board[0][1] == 0)PaintCircleCell(0, 1); 
-	if(board[0][2] == 0)PaintCircleCell(0, 2); 
-	if(board[1][0] == 0)PaintCircleCell(1, 0); 
-	if(board[1][1] == 0)PaintCircleCell(1, 1); 
-	if(board[1][2] == 0)PaintCircleCell(1, 2); 
-	if(board[2][0] == 0)PaintCircleCell(2, 0); 
-	if(board[2][1] == 0)PaintCircleCell(2, 1); 
+	if(board[0][0] == 0)PaintCircleCell(0, 0);
+	if(board[0][1] == 0)PaintCircleCell(0, 1);
+	if(board[0][2] == 0)PaintCircleCell(0, 2);
+	if(board[1][0] == 0)PaintCircleCell(1, 0);
+	if(board[1][1] == 0)PaintCircleCell(1, 1);
+	if(board[1][2] == 0)PaintCircleCell(1, 2);
+	if(board[2][0] == 0)PaintCircleCell(2, 0);
+	if(board[2][1] == 0)PaintCircleCell(2, 1);
 	if(board[2][2] == 0)PaintCircleCell(2, 2);
 }
 
@@ -143,13 +143,13 @@ function checkCell_O(){
 		Tirada++;
 		Chedk_obtions();
 		document.getElementById("number_obt").innerHTML = obtions;
-		
+
 		}
-	if(Tirada == 1 ){
-	
-	if(board[0][0]==0){PaintCircleCell(0, 0)};
-	
-	
+	if(Tirada == 1){
+
+	if(board[1][1]==0){PaintCircleCell(1, 1)}else{PaintCircleCell(0,0)};
+
+
 		CheckCell_true = false;
 		while (CheckCell_true == false) {
 
@@ -190,7 +190,7 @@ function checkCell_O(){
 		if(board[1][1]==2 && board[2][0]==2){PaintCircleCell(0, 2);}
 		if(board[0][2]==2 && board[2][0]==2){PaintCircleCell(1, 1);}
 
-		
+
 		if(board[0][0]==1 && board[0][1]==1){PaintCircleCell(0, 2);}
 		if(board[0][1]==1 && board[0][2]==1){PaintCircleCell(0, 0);}
 		if(board[0][0]==1 && board[0][2]==1){PaintCircleCell(0, 1);}
@@ -223,7 +223,7 @@ function checkCell_O(){
 		if(board[1][1]==1 && board[2][0]==1){PaintCircleCell(0, 2);}
 		if(board[0][2]==1 && board[2][0]==1){PaintCircleCell(1, 1);}
 
-			
+
 	CheckCell_tru = false;
 		while (CheckCell_tru == false) {
 
@@ -236,8 +236,8 @@ function checkCell_O(){
 		}
 		}
 		}
-	
-	
+
+
 	console.log("Tirada: "+ Tirada);
 }
 
@@ -268,7 +268,7 @@ function PaintCircleCell(y, x){
 
 	}
 	}
-	
+
 }
 
 function PaintCrossCell(y, x){
@@ -297,7 +297,7 @@ function PaintCrossCell(y, x){
 	document.getElementById("caja_equix").style.left = "42%";
 	document.getElementById("caja_equix").style.display = "block";
 
-	}	
+	}
 	}
 	botonX.style.borderBottom = "4px solid #400000";
 	botonO.style.borderBottom = "0px solid #400000";
@@ -305,9 +305,3 @@ function PaintCrossCell(y, x){
 	botonX.style.transform = "scale(1.2)";
 
 }
-
-
-
-
-
-
