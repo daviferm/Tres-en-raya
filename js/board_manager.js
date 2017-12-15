@@ -1,4 +1,10 @@
-
+function $(id) {
+	return document.getElementById(id); 
+}
+const EQUIX = $('caja_equix');
+const CIRCULO = $('caja_circulo');
+const MENSAJE = $('mensaje');
+const RESULTADO = $('resultado');
 
 function ClearBoard(){
 	for (i=0; i<3; i++){
@@ -62,31 +68,38 @@ function CheckCell(y, x){
 			document.getElementById("number_obt").innerHTML = obtions;
 			width_progress()
 			break;
+		case (7):
+			width_progress()
+			PaintCrossCell(y, x);
+			checkCell_O();
+			Chedk_obtions();
+			document.getElementById("number_obt").innerHTML = obtions;
+			break;
 		case (8):
+			width_progress()
 			PaintCrossCell(y, x);
 			Chedk_obtions();
 			Check_Game();
-			if(game == true){
+			if(game){
 				checkCell_O_end();
 			}
 			Check_Game();
 			document.getElementById("number_obt").innerHTML = obtions;
-			width_progress()
 			break;
 		default:
 
 			break;
 		}
 	}else {
-		document.getElementById("mensaje").style.display = "block";
-		document.getElementById("resultado").innerHTML = "Partida en tablas!!";
-		document.getElementById("caja_circulo").style.display = "block";
-		document.getElementById("caja_equix").style.display = "block";
+		MENSAJE.style.display = "block";
+		RESULTADO.innerHTML = "Partida en tablas!!";
+		CIRCULO.style.display = "block";
+		EQUIX.style.display = "block";
 	}
 }
 function width_progress(){
 	width_scroll = ((obtions_total - obtions) * (scroll_total / 9));
-	document.getElementById("progreso").style.width = width_scroll + "px";
+	document.getElementById("progreso").style.width = width_scroll + "%";
 	console.log(width_scroll);
 }
 
@@ -115,12 +128,12 @@ function Check_Game(){
 		board[2][1] != 0 &&
 		board[2][2] != 0 ){
 
-	document.getElementById("mensaje").style.display = "block";
-	document.getElementById("resultado").innerHTML = "Partida en tablas!!";
-	document.getElementById("caja_equix").style.left = "35%";
-	document.getElementById("caja_circulo").style.left = "50%";
-	document.getElementById("caja_circulo").style.display = "block";
-	document.getElementById("caja_equix").style.display = "block";
+	MENSAJE.style.display = "block";
+	RESULTADO.innerHTML = "Partida en tablas!!";
+	EQUIX.style.display = 'inline-block';
+	CIRCULO.style.display = 'inline-block';
+	EQUIX.className = 'caja_equix';
+	CIRCULO.className = 'caja_circulo';
 	game = false;
 	}
 }
@@ -234,8 +247,8 @@ function checkCell_O(){
 			CheckCell_tru = true;
 			PaintCircleCell(Celda_y, Celda_x);
 		}
-		}
-		}
+	}
+	}
 
 
 	console.log("Tirada: "+ Tirada);
@@ -260,14 +273,14 @@ function PaintCircleCell(y, x){
 		|| board[0][0]==2 && board[1][1]==2 && board[2][2]==2
 		|| board[0][2]==2 && board[1][1]==2 && board[2][0]==2){
 
-	document.getElementById("mensaje").style.display = "block";
-	document.getElementById("resultado").innerHTML = "Tres en Raya. Gana O!!";
-	document.getElementById("caja_equix").style.display = "none";
-	document.getElementById("caja_circulo").style.left = "40%";
-	document.getElementById("caja_circulo").style.display = "block";
-
+	MENSAJE.style.display = "block";
+	RESULTADO.innerHTML = "Tres en Raya. Gana O!!";
+	EQUIX.style.display = "none";
+	CIRCULO.style.display = "block";
+	CIRCULO.classList.add('games');
 	}
 	}
+	width_progress()
 
 }
 
@@ -291,12 +304,11 @@ function PaintCrossCell(y, x){
 		|| board[0][2]==1 && board[1][1]==1 && board[2][0]==1){
 
 	turno = 0;
-	document.getElementById("mensaje").style.display = "block";
-	document.getElementById("resultado").innerHTML = "Tres en Raya. Gana X!!";
-	document.getElementById("caja_circulo").style.display = "none";
-	document.getElementById("caja_equix").style.left = "42%";
-	document.getElementById("caja_equix").style.display = "block";
-
+	MENSAJE.style.display = "block";
+	RESULTADO.innerHTML = "Tres en Raya. Gana X!!";
+	CIRCULO.style.display = "none";
+	EQUIX.style.display = "block";
+	EQUIX.classList.add('game');
 	}
 	}
 	botonX.style.borderBottom = "4px solid #400000";

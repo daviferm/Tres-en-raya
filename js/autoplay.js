@@ -14,7 +14,7 @@ botonX.addEventListener("click", autoplay);
 var game = true;
 var obtions_total = 9;
 var obtions = 0;
-var scroll_total = 150;
+var scroll_total = 100;
 var width_scroll = 0;
 var max_Tirada;
 var turno;
