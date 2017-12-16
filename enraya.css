@@ -10,14 +10,33 @@ header{
 	height: 70px;
 }
 header h1{
+	font-family: 'Coustard', serif;
 	text-align: center;
-	margin: 20px 20px 0px 20px;
-	animation: 1s title 1;
+	color: #BCB0BB;
+	width: 400px;
+	position: relative;
+	left: 50%;
+	border: 0px solid black;
+	text-shadow: 0px 0px 15px black;
+	margin: 20px 20px 0px -200px;
+	/*animation: 1s title 1;*/
 }
+/*header h1:before{
+	content: "";
+	position: absolute;
+	width: 90%;
+	height: 15px;
+	left: 1px;
+	bottom: 100%;
+	background: radial-gradient(
+		ellipse at 50% 150%, 
+		rgba(0,0,0,0.6) 0%,
+		rgba(0,0,0,0) 80%);
+}*/
 @-webkit-keyframes title{
 	0%{
 		opacity: 0;
-		transform: translateY(30px);
+		transform: translateY(20px);
 	}
 	
 	70%{
@@ -404,6 +423,15 @@ section{
 	z-index: 90;
 	-webkit-animation: 1s destapa_x_dos 1;
 }
+@-webkit-keyframes destapa_x_dos{
+	0%{
+		z-index: 110;
+	}
+	100%{
+		z-index: 110;
+		transform: translateY(100%);
+	}
+}
 
 #equix{
 	width: 90%;
@@ -434,16 +462,87 @@ section{
 				rotate(-45deg);
 	
 }
-
-@-webkit-keyframes destapa_x_dos{
-	0%{
-		z-index: 110;
+#efecto_curz{
+	width: 100px;
+	height: 100px;
+	border: 0px solid black;
+	position: relative;
+	display: none;
+}
+.lado-one, .lado-two{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+}
+.lado-one:before{
+	content: "";
+	position: absolute;
+	top: 10px;
+	left: 15px;
+	width: 100%;
+	height: 8px;
+	background-color: black;
+	transform-origin: top left;
+	transform: rotate(45deg);
+	animation: .4s ladoBefore 1;
+}
+.lado-two:before{
+	content: "";
+	position: absolute;
+	top: 80%;
+	left: 15px;
+	width: 100%;
+	height: 8px;
+	background-color: black;
+	transform-origin: bottom left;
+	transform: rotate(-45deg);
+	transition-delay: .4s;
+	animation: .5s ladoAfter 1;
+}
+@-webkit-keyframes ladoBefore{
+	from{
+		width: 0%;
 	}
-	100%{
-		z-index: 110;
-		transform: translateY(100%);
+	to{
+		width: 100%;
 	}
 }
+@-webkit-keyframes ladoAfter{
+	0%, 40%{
+		width: 0%;
+	}
+	100%{
+		width: 100%;
+	}
+}
+.caja{
+	display: block;
+}
+#circle{
+	width: 100px;
+	height: 100px;
+	display: none;
+}
+.circulo{
+	border: 8px solid #CCCC33;
+	width: 70px;
+	height: 70px;
+	margin: 10px 0px 0px 10px;
+	border-radius: 50%;
+	position: relative;
+	transform-origin: bottom right;
+	animation: .6s borde 1;
+}
+@-webkit-keyframes borde{
+	from{
+		border-width: 0px;
+	}
+	to{
+		border-width: 8px;
+	}
+}
+
 @media screen and (min-width: 760px){
 	
 	.caja_reloj{
@@ -497,9 +596,10 @@ section{
 		margin: 0px 0px 0px 100px;
 	}
 	header h1{
-		font-size: 3em;
+		font-size: 3.5em;
 	}
 }
+
 
 
 

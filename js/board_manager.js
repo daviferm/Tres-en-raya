@@ -5,6 +5,10 @@ const EQUIX = $('caja_equix');
 const CIRCULO = $('caja_circulo');
 const MENSAJE = $('mensaje');
 const RESULTADO = $('resultado');
+const CRUZ = $('efecto_curz');
+const CIRCLE = $('circle');
+let content_circle = CIRCLE.innerHTML;
+let content_cruz = CRUZ.innerHTML;
 
 function ClearBoard(){
 	for (i=0; i<3; i++){
@@ -259,11 +263,12 @@ function PaintCircleCell(y, x){
 
 	if(board[y][x] == 0){
 		cell = document.getElementById("c"+y+x);
-		cell.innerHTML = "<img src='Circulo.gif'></img>";
+		cell.innerHTML = content_circle;
 		board[y][x] = 2;
 		Tirada++;
 		turno = 0;
 	}
+	// "<img src='Circulo.gif'></img>"
 	if(board[0][0]==2 && board[0][1]==2 && board[0][2]==2
 		|| board[1][0]==2 && board[1][1]==2 && board[1][2]==2
 		|| board[2][0]==2 && board[2][1]==2 && board[2][2]==2
@@ -288,12 +293,14 @@ function PaintCrossCell(y, x){
 	if(turno == 0){
 
 	if(board[y][x] == 0){
+
 		cell = document.getElementById("c"+y+x);
-		cell.innerHTML = "<img src='Equix.gif'></img>";
+		cell.innerHTML = content_cruz;
 		board[y][x] = 1;
 		Tirada++;
 		turno = 1;
 	}
+	// "<img src='Equix.gif'></img>"
 	if(board[0][0]==1 && board[0][1]==1 && board[0][2]==1
 		|| board[1][0]==1 && board[1][1]==1 && board[1][2]==1
 		|| board[2][0]==1 && board[2][1]==1 && board[2][2]==1
