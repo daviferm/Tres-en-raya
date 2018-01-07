@@ -118,19 +118,10 @@ function CheckCell(y, x){
 		case (8):
 			width_progress()
 			PaintCrossCell(y, x);
-			if(players==1) checkCell_O();
-			Chedk_obtions();
 			Check_Game();
+			if(players==1 && game==true) checkCell_O();
+			Chedk_obtions();
 			document.getElementById("number_obt").innerHTML = obtions;
-			// width_progress()
-			// PaintCrossCell(y, x);
-			// Chedk_obtions();
-			// Check_Game();
-			// if(game){
-			// 	checkCell_O_end();
-			// }
-			// Check_Game();
-			// document.getElementById("number_obt").innerHTML = obtions;
 			break;
 		default:
 
@@ -149,6 +140,7 @@ function width_progress(){
 }
 
 function Chedk_obtions(){
+	console.log("Tirada: " + Tirada);
 	obtions = 0;
 	if(board[0][0] == 0)obtions++;
 	if(board[0][1] == 0)obtions++;
@@ -201,15 +193,10 @@ function checkCell_O(){
 		Chedk_obtions();
 		document.getElementById("number_obt").innerHTML = obtions;
 
-		}
-	if(Tirada == 1){
-
-	if(board[1][1]==0){PaintCircleCell(1, 1)}else{PaintCircleCell(0,0)};
-		
 	}
+	
 
 	if(Tirada > 1){
-
 		if(board[0][0]==2 && board[0][1]==2){PaintCircleCell(0, 2);}
 		if(board[0][1]==2 && board[0][2]==2){PaintCircleCell(0, 0);}
 		if(board[0][0]==2 && board[0][2]==2){PaintCircleCell(0, 1);}
@@ -268,6 +255,7 @@ function checkCell_O(){
 		if(board[1][1]==1 && board[2][0]==1){PaintCircleCell(0, 2);}
 		if(board[0][2]==1 && board[2][0]==1){PaintCircleCell(1, 1);}
 
+		
 
 		CheckCell_true = false;
 		while (CheckCell_true == false) {
@@ -275,12 +263,16 @@ function checkCell_O(){
 		Celda_y=Math.round(Math.random()*2);
 		Celda_x=Math.round(Math.random()*2);
 
-		if(board[Celda_y][Celda_x] == 0){
-			CheckCell_true = true;
-			PaintCircleCell(Celda_y, Celda_x);
+			if(board[Celda_y][Celda_x] == 0){
+				CheckCell_true = true;
+				PaintCircleCell(Celda_y, Celda_x);
+			}
 		}
 	}
-	}
+	if(Tirada == 1){
+
+		if(board[1][1]==0){PaintCircleCell(1, 1)}else{PaintCircleCell(0,0)};
+	}	
 }
 
 function PaintCircleCell(y, x){
@@ -297,8 +289,7 @@ function PaintCircleCell(y, x){
 	}
 	width_progress();
 	chekcButtom();
-
-}
+	}
 
 function PaintCrossCell(y, x){
 	if(turno == 0){
