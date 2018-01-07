@@ -140,7 +140,6 @@ function width_progress(){
 }
 
 function Chedk_obtions(){
-	console.log("Tirada: " + Tirada);
 	obtions = 0;
 	if(board[0][0] == 0)obtions++;
 	if(board[0][1] == 0)obtions++;
@@ -162,7 +161,8 @@ function Check_Game(){
 		board[1][2] != 0 &&
 		board[2][0] != 0 &&
 		board[2][1] != 0 &&
-		board[2][2] != 0 ){
+		board[2][2] != 0 &&
+		MENSAJE.style.display != "block"){
 
 	MENSAJE.style.display = "block";
 	RESULTADO.innerHTML = "Partida en tablas!!";
