@@ -5,13 +5,19 @@
 	<link href="https://fonts.googleapis.com/css?family=Coustard" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" href="enraya.css">
-	<link rel="shortcut icon" href="Circulo.png" type="image/x-icon">
+	
 	<title>Tres en raya</title>
 </head>
 <body>
 	<header>
 		<h1>Tres en Raya</h1>
 	</header>
+	<div class="modal modalIn">
+		<div class="caja_bot">
+			<button class="btn" id="onePlayer" onclick="ocultarModar(1)" ><p>Un Jugador</p></button>
+			<button class="btn" id="twoPlayer" onclick="ocultarModar(2)" ><p>Dos Jugadores</p></button>
+		</div>
+	</div>
 	<div class="main">
 		<section>
 			<div class="caja_reloj">
@@ -56,24 +62,6 @@
 		</section>
 	
 		<div class="content">
-			<!-- <table>
-				<tr>
-					<td class="cell" id="c00" onclick="CheckCell(0, 0)"></td>
-					<td class="cell" id="c10" onclick="CheckCell(1, 0)"></td>
-					<td class="cell" id="c20" onclick="CheckCell(2, 0)"></td>
-				</tr><tr>
-					<td class="cell" id="c01" onclick="CheckCell(0, 1)"></td>
-					<td class="cell" id="c11" onclick="CheckCell(1, 1)"></td>
-					<td class="cell" id="c21" onclick="CheckCell(2, 1)"></td>
-				</tr><tr>
-					<td class="cell" id="c02" onclick="CheckCell(0, 2)"></td>
-					<td class="cell" id="c12" onclick="CheckCell(1, 2)"></td>
-					<td class="cell" id="c22" onclick="CheckCell(2, 2)"></td>
-				</tr>
-				<colgroup>
-					<col span="3">
-				</colgroup>
-			</table> -->
 			<div class="cell" id="c00" onclick="CheckCell(0, 0)">
 
 			</div>
@@ -106,7 +94,7 @@
 				<div class="tapaX2"></div>
 				<div id="equix"></div>
 			</div>
-			<p id="resultado" onclick="autoplay()">Partida en tabla</p>
+			<p id="resultado" onclick="autoplay()"></p>
 		</div>
 		
 	</div>

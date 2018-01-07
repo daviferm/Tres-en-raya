@@ -1,10 +1,29 @@
 
 body{
-	background-color: #1DB29C;
+	height: 100vh;
+	/*background-color: #1DB29C;*/
+	background: -webkit-linear-gradient(
+		top,
+		#043033 0%,
+		#1D494C 40%,
+		#467579 80%,
+		#64794C 100vh);
+	background: -o-linear-gradient(
+		top,
+		#043033 0%,
+		#1D494C 40%,
+		#467579 80%,
+		#64794C 100%);
+	background: linear-gradient(
+		top,
+		#043033 0%,
+		#1D494C 40%,
+		#467579 80%,
+		#64794C 100%);;
+	background-repeat: no-repeat;
 	margin: 0px;
 	padding: 0px;
 }
-
 header{
 	width: 100%;
 	height: 70px;
@@ -19,40 +38,94 @@ header h1{
 	border: 0px solid black;
 	text-shadow: 0px 0px 15px black;
 	margin: 20px 20px 0px -200px;
-	/*animation: 1s title 1;*/
 }
-/*header h1:before{
-	content: "";
-	position: absolute;
-	width: 90%;
-	height: 15px;
-	left: 1px;
-	bottom: 100%;
-	background: radial-gradient(
-		ellipse at 50% 150%, 
-		rgba(0,0,0,0.6) 0%,
-		rgba(0,0,0,0) 80%);
-}*/
-@-webkit-keyframes title{
-	0%{
-		opacity: 0;
-		transform: translateY(20px);
+
+.modal{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background-color: rgba(0,0,0,.6);
+	z-index: 200;
+	transform: translateY(-2000px);
+	transition-duration: 1.4s;
+}
+
+.modal .caja_bot{
+	border: 1px solid white;
+	width: 350px;
+	height: 200px;
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0,0,0,.9);
+}
+.modal .caja_bot p{
+	font-size: 1.2em;
+
+}
+.modal.modalOut{
+	animation: modalOut 1.2s forwards;
+}
+.modal.modalIn{
+	animation-timing-function: cubic-bezier(.54,.28,.44,1.43);
+	animation: modalIn .8s forwards;
+}
+.modal .btn{
+	width: 100px;
+	height: 60px;
+	background-color: #669900;
+	border-radius: 10px;
+	margin-left: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	cursor: pointer;
+	box-shadow: inset 0 -.2em rgba(0,0,0,.6);
+	outline: none;
+	transition-duration: .2s;
+	will-change: transform;
 	}
-	
-	70%{
-		opacity: 1;
+.btn:active{
+		transform: scale(.95);
+	}
+@keyframes modalOut {
+	0%{
+		transform: translate(0px);
+	}
+	20%{
+		transform: translateY(-5px);
+	}
+	40%{
+		transform: translateY(10px);
+	}
+	100%{
+		transform: translateY(-2000px);
+	}
+}
+@keyframes modalIn {
+	0%{
+		transform: translateY(-2000px);
+	}
+	60%{
+		transform: translateY(10px);
+	}
+	90%{
 		transform: translateY(-5px);
 	}
 	100%{
-		opacity: 1;
-		transform: translateY(0px);
+		transform: translate(0px);
 	}
 }
-
-
 .main{
 	width: 100%;
-	background-color: #1DB29C;
+	/*background-color: #1DB29C;*/
 	display: -webkit-flex;
 	-webkit-flex-flow: column nowrap;
 	border: 0px solid black;
@@ -219,7 +292,7 @@ section{
 	width: 260px;
 	height: 260px;
 	margin: 50px auto;
-	background-color: #1DB29C;
+	/*background-color: #1DB29C;*/
 	padding: 20px 0px 0px 20px;
 	animation: .6s aparicion 1;
 }
@@ -465,7 +538,6 @@ section{
 #efecto_curz{
 	width: 100px;
 	height: 100px;
-	border: 0px solid black;
 	position: relative;
 	display: none;
 }
@@ -482,7 +554,7 @@ section{
 	left: 15px;
 	width: 100%;
 	height: 8px;
-	background-color: black;
+	background-color: #181818;
 	transform-origin: top left;
 	transform: rotate(45deg);
 	animation: .4s ladoBefore 1;
@@ -494,7 +566,7 @@ section{
 	left: 15px;
 	width: 100%;
 	height: 8px;
-	background-color: black;
+	background-color: #181818;
 	transform-origin: bottom left;
 	transform: rotate(-45deg);
 	transition-delay: .4s;
@@ -526,9 +598,9 @@ section{
 }
 .circulo{
 	border: 8px solid #CCCC33;
-	width: 70px;
-	height: 70px;
-	margin: 10px 0px 0px 10px;
+	width: 50px;
+	height: 50px;
+	margin: 7px 0px 0px 7px;
 	border-radius: 50%;
 	position: relative;
 	transform-origin: bottom right;
@@ -587,6 +659,11 @@ section{
 	.caja_reloj{
 		width: 30%;
 		padding-right: 20px;
+	}
+	.circulo{
+		width: 75px;
+		height: 75px;
+		margin: 8px 0px 0px 8px;
 	}
 }
 
