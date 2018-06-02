@@ -352,13 +352,13 @@ function check_circle_end () {
 }
 function chekcButtom() {
 	if(turno==0){
-		botonX.style.borderBottom = "3px solid #400000";
-		botonO.style.borderBottom = "0px solid #400000";
+		botonX.style.borderBottom = "3px solid #FFCC99";
+		botonO.style.borderBottom = "0px solid #FFCC99";
 		botonO.style.transform = "scale(1)";
 		botonX.style.transform = "scale(1.1)";
 	}else if (turno==1) {
-		botonX.style.borderBottom = "0px solid #400000";
-		botonO.style.borderBottom = "3px solid #400000";
+		botonX.style.borderBottom = "0px solid #FFCC99";
+		botonO.style.borderBottom = "3px solid #FFCC99";
 		botonO.style.transform = "scale(1)";
 		botonX.style.transform = "scale(1.1)";
 	}

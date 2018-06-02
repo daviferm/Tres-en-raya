@@ -74,10 +74,12 @@ header h1{
 }
 .modal.modalOut{
 	animation: modalOut 1.2s forwards;
+	will-change: translate();
 }
 .modal.modalIn{
 	animation-timing-function: cubic-bezier(.54,.28,.44,1.43);
 	animation: modalIn .8s forwards;
+	will-change: translate();
 }
 .modal .btn{
 	width: 100px;
